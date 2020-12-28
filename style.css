@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+
+    font-family: nunito, Arial;
+    background-color: #31343F;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+}
+
+.container {
+    background-color: #21232B;
+    padding: 3rem 4rem 0 4rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, .4);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* max-width: 35rem;
+    width: 80vw; */
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    text-align: center;
+}
+
+h1::after {
+    content:'';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #E65E88;
+    margin: .8rem auto 2.5rem auto;
+}
+
+.input {
+    max-width: 320px;
+    font-size: 1.5rem;
+    margin: 0 auto 30px auto;
+}
+
+input[type="number"] {
+    width: 230px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, .2);
+    font-family: nunito, Arial;
+    font-size: 1.2rem;
+    outline: none;
+    padding: .5rem;
+    opacity: .8;
+}
+
+input[type="number"]:focus {
+    border: 2px solid #E65E88;
+}
+
+#altura {
+    margin-left: .65rem;
+}
+#peso {
+    margin-left: 1.5rem;
+}
+
+#calcular {
+    border: none;
+    font-family: nunito, Arial;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    cursor: pointer;
+    background-color: #E65E88;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, .3);
+
+    width: 317px;
+    height: 45px;
+
+    margin: 1.5rem auto 3.1rem auto;
+    text-align: center;
+    transition: .5s;
+    outline: none;
+}
+
+#calcular:hover {
+    background-color: #a03355;
+}
+
+.result {
+    min-width: 315px;
+    max-width: 315px;
+    height: 166px;
+    background-color: #12141A;
+    border-radius: 7px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, .3);
+    padding: 1.5rem;
+    margin: 0 auto 40px auto;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.7;
+}
+
+::-webkit-input-placeholder {
+    opacity: .5;
+    font-size: 1rem;
+}
+
+.result.invalido {
+    color: rgb(223, 51, 51);
+}
+
+/* Dark Mode Button */
+.ckLightMode {
+    opacity: 0;
+}
+
+.btnLightMode {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+
+    position: absolute;
+    top: 35px;
+    left: 125px;
+}
+
+.btnLightMode::before, 
+.btnLightMode::after {
+    content: '';
+    transition: .5s;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .3);
+}
+
+.btnLightMode::before {
+    display: inline-block;
+    width: 2em;
+    height: 1em;
+    border-radius: 1em;
+    background-color: #E65E88;
+}
+
+.btnLightMode::after {
+    position: absolute;
+    top: 0.025em;
+    left: 0.025em;
+    width: 0.90em;
+    height: 0.90em;
+    border-radius: 100%;
+    background-color: #fff;
+}
+
+.ckLightMode:checked + .btnLightMode::before{
+    background-color: #28D579;
+}
+.ckLightMode:checked + .btnLightMode::after{
+    left: 1.025em;
+}
+
+.lightModeArea p {
+    font-size: 1.1rem;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+/* LIGHT MODE */
+
+body.lightMode {
+    background-color: #eee;
+    color: #0E0E0E;
+}
+
+.container.lightMode {
+    background-color: #E2E3E5;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, .2);
+}
+
+.result.lightMode {
+    background-color: #ecedee;
+}
+
+input[type="number"].lightMode {
+    opacity: 1;
+}
+
+@media (max-width: 460px) {
+    .container {
+        overflow: hidden;
+    }
+
+    #altura {
+        margin-left: 0rem;
+    }
+    #peso {
+        margin-left: 0rem;
+    }
+    #calcular {
+        width: 15rem;
+        margin: 1.5rem 0 3.1rem 0;
+    }
+    #resultado {
+        min-width: 230px;
+        max-width: 200px;
+        margin: 0 0 40px 0;
+    }
+    input[type="number"] {
+        width: 240px;
+    }
+}
