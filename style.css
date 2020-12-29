@@ -26,8 +26,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* max-width: 35rem;
-    width: 80vw; */
 }
 
 h1 {
@@ -202,6 +200,10 @@ input[type="number"].lightMode {
 @media (max-width: 460px) {
     .container {
         overflow: hidden;
+    }
+
+    .container h1 {
+        margin-top: 40px;
     }
 
     #altura {
