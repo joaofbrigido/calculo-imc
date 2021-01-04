@@ -185,7 +185,7 @@ body.lightMode {
 }
 
 .container.lightMode {
-    background-color: #E2E3E5;
+    background-color: #D2D3D6;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, .2);
 }
 
@@ -197,11 +197,7 @@ input[type="number"].lightMode {
     opacity: 1;
 }
 
-@media (max-width: 460px) {
-    .container {
-        overflow: hidden;
-    }
-
+@media (max-width: 461px) {
     .container h1 {
         margin-top: 40px;
     }
@@ -214,14 +210,19 @@ input[type="number"].lightMode {
     }
     #calcular {
         width: 15rem;
-        margin: 1.5rem 0 3.1rem 0;
+        /* margin: 1.5rem 0 3.1rem 0; */
     }
     #resultado {
         min-width: 230px;
         max-width: 200px;
-        margin: 0 0 40px 0;
+        /* margin: 0 0 40px 0; */
     }
     input[type="number"] {
         width: 240px;
+        display: block;
+    }
+
+    .ckLightMode::after, .ckLightMode::before, .lightModeArea {
+        display: none;
     }
 }
